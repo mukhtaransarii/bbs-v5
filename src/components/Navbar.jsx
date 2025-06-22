@@ -19,7 +19,7 @@ export default function Navbar() {
          ${isOpen ? '-rotate-45' : 'rotate-90'}`}>ا</span>
        </div>
        
-       <div className={`fixed left-0 w-full h-[70vh] md:h-[60vh] bg-[#D22E1F] rounded-t-2xl transition-all duration-500 ease-in-out flex flex-col justify-between
+       <div className={`fixed left-0 w-full h-[55vh] md:h-[60vh] bg-[#D22E1F] rounded-t-2xl transition-all duration-500 ease-in-out flex flex-col justify-between
          ${isOpen ? 'bottom-0' : '-bottom-[80vh]'}`}>
          
          {/*Nav menu section*/}
