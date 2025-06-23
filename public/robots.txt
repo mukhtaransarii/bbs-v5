@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mukhtaralam.vercel.app/sitemap.xml
