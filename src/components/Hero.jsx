@@ -15,7 +15,7 @@ const Hero = () => {
       {/* Foreground image */}
       <img
         src={heroImage}
-        alt="Hero"
+        alt="Nasara E-commerce Project built using MERN stack"
         className="absolute inset-0 w-full h-full object-cover z-10 pointer-events-none"
         style={{
           objectPosition: 'center 35%',
