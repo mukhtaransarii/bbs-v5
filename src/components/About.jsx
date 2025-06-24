@@ -1,7 +1,43 @@
-import React from 'react'
+import { useRef, useEffect } from "react";
 import mukhtarGoggle from '/img/MukhtarGoggles.webp'
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-  export default function About() {
+gsap.registerPlugin(ScrollTrigger);
+
+export default function About() {
+    const paraRef = useRef();
+    
+    useGSAP(() => {
+      const el = paraRef.current;
+      const text = el.textContent;
+      el.textContent = ""; // Clear paragraph
+  
+      const letters = text.split("").map((char) => {
+        const span = document.createElement("span");
+        span.textContent = char;
+        span.style.opacity = 0.4;
+        span.style.display = "inline-block";
+        span.style.whiteSpace = char === " " ? "pre" : "normal"; // keep spacing
+        el.appendChild(span);
+        return span;
+      });
+  
+      gsap.to(letters, {
+        opacity: 1,
+        y: 0,
+        stagger: 0.05,
+        duration: 0.3,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 80%",
+          end: "top 10%",
+          scrub: true,
+        },
+      });
+    }, []);
    return (
      <div className="px-4 py-16">
        <h1 className="text-5xl font-[ClashDisplay] mb-8">Bio</h1>
@@ -11,7 +47,7 @@ import mukhtarGoggle from '/img/MukhtarGoggles.webp'
            <h1 className="text-[16px] font-semibold">Mukhtar Alam</h1>
            <p>Delhi, India  🇮🇳</p>
          
-           <h1 className="w-full my-4">
+           <h1 className="w-full my-4" ref={paraRef}>
              I’m a software engineer specialized in <mark className="text-[#D22E1F] bg-transparent">mern stack</mark> who builds fast, functional, and kinda addictive web apps.
              Frontend? Nailed it. Backend? Say less.
              Basically turning caffeine and logic into clean digital experiences.
@@ -43,3 +79,4 @@ import mukhtarGoggle from '/img/MukhtarGoggles.webp'
      </div>
    )
 }
+

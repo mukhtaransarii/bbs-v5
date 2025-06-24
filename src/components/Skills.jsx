@@ -1,4 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 import {
   SiReact, SiHtml5, SiCss3, SiJavascript, SiTailwindcss, SiMongodb,
@@ -48,8 +53,29 @@ const skills = {
 
 
 export default function Skills() {
+	const skillsRef = useRef();
+
+  useGSAP(() => {
+    const boxes = skillsRef.current.querySelectorAll(".skill-box");
+
+    gsap.from(boxes, {
+      opacity: 0,
+      y: 30,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: skillsRef.current,
+        start: "top 80%",
+        end: "top",
+        scrub: true,
+        markers: true,
+      },
+    });
+  }, []);
+  
   return (
-    <section className="skills-section px-4 pb-16" id="skills">
+    <section className="skills-section px-4 pb-16" id="skills" ref={skillsRef}>
       <h1 className="text-5xl font-[ClashDisplay] mb-8">Skills</h1>
 
       {Object.entries(skills).map(([category, skillList]) => (
@@ -59,7 +85,7 @@ export default function Skills() {
             {skillList.map((skill, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-center w-20 text-center"
+                className="skill-box flex flex-col items-center w-20 text-center"
               >
                 <div className="text-3xl">{skill.icon || '🎯'}</div>
                 <span className="mt-2 text-[12px]">{skill.name}</span>

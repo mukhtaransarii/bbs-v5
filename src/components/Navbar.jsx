@@ -1,5 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
+
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 export default function Navbar() {
    const [isOpen, setIsOpen] = useState(false);
    
@@ -7,11 +12,28 @@ export default function Navbar() {
      setIsOpen(!isOpen)
    }
    
+   useGSAP(() => {
+     const tl = gsap.timeline();
+     
+     tl.from('.logo', {
+       y: -50,
+       opacity: 0,
+       duration: 0.5,
+       delay: 1,
+     });
+     
+     tl.from('.hamburger', {
+       y: -50,
+       opacity: 0,
+       duration: 0.5,
+     });
+   }, []); 
+   
    return (
      <nav className="fixed top-0 left-0 w-full h-12 px-4 z-50 flex items-center justify-between">
-       <Link to="/" className="text-2xl font-[Aref]">م</Link>
+       <Link to="/" className="logo text-2xl font-[Aref]">م</Link>
       
-       <div onClick={toggleAlif} className="h-full mr-2 flex flex-col justify-center items-center cursor-pointer">
+       <div onClick={toggleAlif} className="hamburger h-full mr-2 flex flex-col justify-center items-center cursor-pointer">
          <span className={`font-[Aref] text-2xl leading-[4px] scale-y-[2.5] transition-all duration-500 ease-in-out
          ${isOpen ? 'rotate-45' : 'rotate-90'}`}>ا</span>
          
