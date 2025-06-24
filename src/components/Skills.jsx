@@ -69,7 +69,6 @@ export default function Skills() {
         start: "top 80%",
         end: "top",
         scrub: true,
-        markers: true,
       },
     });
   }, []);
