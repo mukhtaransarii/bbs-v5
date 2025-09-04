@@ -38,6 +38,7 @@ export default function About() {
         },
       });
     }, []);
+    
    return (
      <div className="px-4 py-16">
        <h1 className="text-5xl font-[ClashDisplay] mb-8">Bio</h1>
@@ -45,7 +46,7 @@ export default function About() {
       <div className="flex flex-col md:flex-row gap-4 md:justify-between md:gap-16">
          <div>
            <h1 className="text-[16px] font-semibold">Mukhtar Alam</h1>
-           <p>Delhi, India  🇮🇳</p>
+           <p>New Delhi, India  🇮🇳</p>
          
            <h1 className="w-full my-4" ref={paraRef}>
              I’m a software engineer specialized in <mark className="text-[#D22E1F] bg-transparent">mern stack</mark> who builds fast, functional, and kinda addictive web apps.
