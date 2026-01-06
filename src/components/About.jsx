@@ -64,7 +64,7 @@ export default function About() {
            <a href="https://linkedin.com/in/iibbs" target="_blank" className="text-blue-500">linkedin.com/in/iibbs</a>
     
            <div className="flex gap-4 mt-8">
-             <a href="/Mukhtar-Alam_Resume_Public.pdf" download id="resume"
+             <a href="/MukhtarA_MERN+ReactNative.pdf" download id="resume"
                className="px-5 py-2 rounded-2xl bg-white text-black text-sm font-semibold shadow hover:bg-gray-200 transition">
                📄 Download Resume
              </a>

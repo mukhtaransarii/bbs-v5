@@ -6,8 +6,8 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 import {
-  SiReact, SiHtml5, SiCss3, SiJavascript, SiTailwindcss, SiMongodb,
-  SiExpress, SiNodedotjs, SiGithub, SiPostman, SiVercel, SiRender,
+  SiReact, SiNuxtdotjs, SiHtml5, SiCss3, SiJavascript, SiTailwindcss, SiMongodb,
+  SiExpress, SiNodedotjs, SiGithub, SiPostman, SiVercel, SiRender, SiExpo,
   SiGoogleanalytics, SiGooglecloud, SiFirebase, SiNetlify,
   SiRedux, SiMui, SiTypescript, SiGit, SiSocketdotio, SiJsonwebtokens,
   SiGooglesearchconsole, SiGoogleads
@@ -19,6 +19,8 @@ const skills = {
     { name: 'CSS', icon: <SiCss3 color="#264de4" /> },
     { name: 'JavaScript', icon: <SiJavascript color="#f7df1e" /> },
     { name: 'React', icon: <SiReact color="#61dbfb" /> },
+    { name: 'React Native', icon: <SiReact color="#61dbfb" /> },
+    { name: 'Nuxt', icon: <SiNuxtdotjs color="#02DC83" /> },
     { name: 'Tailwind CSS', icon: <SiTailwindcss color="#38bdf8" /> },
     { name: 'Redux', icon: <SiRedux color="#764abc" /> },
     { name: 'MUI', icon: <SiMui color="#007fff" /> },
@@ -38,6 +40,7 @@ const skills = {
     { name: 'GitHub', icon: <SiGithub /> },
     { name: 'Postman', icon: <SiPostman color="#ff6c37" /> },
     { name: 'Vercel', icon: <SiVercel /> },
+    { name: 'Expo', icon: <SiExpo /> },
     { name: 'Render', icon: <SiRender color="#3f3ff2" /> },
     { name: 'Netlify', icon: <SiNetlify color="#00c7b7" /> },
     { name: 'Termux', icon: <SiGithub /> }, // Placeholder (no Termux icon available)
