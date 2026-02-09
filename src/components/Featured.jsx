@@ -56,10 +56,10 @@ export default function Featured() {
             </div>
 
             <div className="flex justify-between items-center">
-              <p className="font-semibold mt-1">{item.title}</p>
-              <p className="mt-1 text-[10px] italic">{item.date}</p>
+              <p className="font-semibold mt-1 md:text-xl">{item.title}</p>
+              <p className="mt-1 text-[10px] italic md:text-sm">{item.date}</p>
             </div>
-            <p className="leading-none text-[10px]">{item.desc}</p>
+            <p className="leading-none text-[10px] md:text-sm">{item.desc}</p>
           </a>
         ))}
       </div>

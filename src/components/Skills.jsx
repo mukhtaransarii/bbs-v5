@@ -6,7 +6,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 import {
-  SiReact, SiNuxtdotjs, SiHtml5, SiCss3, SiJavascript, SiTailwindcss, SiMongodb,
+  SiReact, SiNuxtdotjs, SiVuedotjs, SiHtml5, SiCss3, SiJavascript, SiTailwindcss, SiMongodb,
   SiExpress, SiNodedotjs, SiGithub, SiPostman, SiVercel, SiRender, SiExpo,
   SiGoogleanalytics, SiGooglecloud, SiFirebase, SiNetlify,
   SiRedux, SiMui, SiTypescript, SiGit, SiSocketdotio, SiJsonwebtokens,
@@ -21,6 +21,7 @@ const skills = {
     { name: 'React', icon: <SiReact color="#61dbfb" /> },
     { name: 'React Native', icon: <SiReact color="#61dbfb" /> },
     { name: 'Nuxt', icon: <SiNuxtdotjs color="#02DC83" /> },
+    { name: 'Vue', icon: <SiVuedotjs color="#42B883" /> },
     { name: 'Tailwind CSS', icon: <SiTailwindcss color="#38bdf8" /> },
     { name: 'Redux', icon: <SiRedux color="#764abc" /> },
     { name: 'MUI', icon: <SiMui color="#007fff" /> },
