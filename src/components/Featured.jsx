@@ -9,6 +9,7 @@ export default function Featured() {
   const sectionRef = useRef();
 
   const projects = [
+    {thumbnail: '/img/sera.jpg', title: 'Sera', desc: 'Sera - Your Personal AI Assistant | MERN | GEMINI', url: 'https://sera-blue.vercel.app', date: 'Apr 2026 - Apr 2026'},
     {thumbnail: '/img/nasara-projects.webp', title: 'Nasara', desc: 'E-commerce with admin panel, SEO | ADS | MERN', url: 'https://nasaraa.vercel.app', date: 'Mar 2025 - Apr 2025'},
     {thumbnail: '/img/postify-projects.webp', title: 'Postify', desc: 'Social Media App, Backend | MEN + EJS', url: 'https://postify-u14d.onrender.com', date: 'Nov 2024 - Dec 2024'},
     {thumbnail: '/img/ochi-projects.webp', title: 'Ochi', desc: 'Frontend project, React | Gsap | UI/UX', url: 'https://ochi-bbs.vercel.app', date: 'Jun 2024 - Jul 2024'},
