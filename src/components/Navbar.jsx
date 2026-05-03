@@ -1,65 +1,63 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
-
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
-   const [isOpen, setIsOpen] = useState(false);
-   
-   const toggleAlif = () => {
-     setIsOpen(!isOpen)
-   }
-   
-   useGSAP(() => {
-     const tl = gsap.timeline();
-     
-     tl.from('.logo', {
-       y: -50,
-       opacity: 0,
-       duration: 0.5,
-       delay: 1,
-     });
-     
-     tl.from('.hamburger', {
-       y: -50,
-       opacity: 0,
-       duration: 0.5,
-     });
-   }, []); 
-   
-   return (
-     <nav className="fixed top-0 left-0 w-full h-12 px-4 z-50 flex items-center justify-between">
-       <Link to="/" className="logo text-2xl font-[Aref]">م</Link>
-      
-       <div onClick={toggleAlif} className="hamburger h-full mr-2 flex flex-col justify-center items-center cursor-pointer">
-         <span className={`font-[Aref] text-2xl leading-[4px] scale-y-[2.5] transition-all duration-500 ease-in-out
-         ${isOpen ? 'rotate-45' : 'rotate-90'}`}>ا</span>
-         
-         <span className={`font-[Aref] text-2xl leading-[4px] scale-y-[2.5] transition-all duration-500 ease-in-out 
-         ${isOpen ? '-rotate-45' : 'rotate-90'}`}>ا</span>
-       </div>
-       
-       <div className={`fixed left-0 w-full h-[55vh] md:h-[60vh] bg-[#D22E1F] rounded-t-2xl transition-all duration-500 ease-in-out flex flex-col justify-between
-         ${isOpen ? 'bottom-0' : '-bottom-[80vh]'}`}>
-         
-         {/*Nav menu section*/}
-         <div onClick={() => setIsOpen(false)}
-           className="p-8 text-white flex flex-col text-5xl font-[ClashDisplay]">
-           <a href="#home">Home</a>
-           <a href="#resume">Resume</a>
-           <a href="#skills">Skills</a>
-           <a href="#contact">Contact</a>
-         </div>
-         
-         {/*Nav links section*/}
-         <div className="p-8 text-white text-[10px]">
-           <a href="mailto:mukhtaralam8055@gmail.com">MUKHTARALAM8055@GMAIL.COM</a> <br/>
-           <a href="https://linkedin.com/in/iibbs">LINKEDIN</a>
-         </div>
-         
-       </div>
-     </nav>
-   );
-  }
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <nav className="fixed top-0 left-0 w-full h-12 px-6 z-50 flex items-center justify-between bg-white/80 backdrop-blur-sm">
+        <Link to="/" className="font-[Aref] text-2xl text-black pb-4">م</Link>
+
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex flex-col justify-center items-end gap-[6px] cursor-pointer w-10 h-8"
+          aria-label="Toggle menu"
+        >
+          <span className={`block h-[1.5px] bg-black transition-all duration-500 ease-in-out origin-right
+            ${isOpen ? 'w-16 -rotate-[6deg]' : 'w-16'}`}
+          />
+          <span className={`block h-[1.5px] bg-black transition-all duration-500 ease-in-out origin-right
+            ${isOpen ? 'w-16 rotate-[6deg]' : 'w-16'}`}
+          />
+        </button>
+      </nav>
+
+      {/* Overlay */}
+      <div
+        onClick={() => setIsOpen(false)}
+        className={`fixed inset-0 z-40 bg-black/20 backdrop-blur-[2px] transition-opacity duration-500
+          ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      />
+
+      {/* Slide-up menu — uses translate instead of bottom to avoid layout lag */}
+      <div className={`fixed bottom-0 left-0 w-full h-[55vh] z-40 bg-[#F5F4F0] border-t border-black/10 rounded-t-2xl flex flex-col justify-between
+        transition-transform duration-500 ease-in-out will-change-transform
+        ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}
+      >
+        {/* Nav links */}
+        <div onClick={() => setIsOpen(false)} className="p-8 flex flex-col gap-1">
+          {['Home', 'Bio', 'Skills', 'Contact'].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="font-[ClashDisplay] text-5xl text-black leading-tight hover:text-gray-400 transition-colors duration-200"
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+
+        {/* Bottom links */}
+        <div className="px-8 pb-8 flex flex-col  text-[10px] tracking-widest uppercase text-gray-400">
+          <a href="mailto:mukhtaralam8055@gmail.com" className="hover:text-black transition-colors duration-200">
+            mukhtaralam8055@gmail.com
+          </a>
+          <a href="https://linkedin.com/in/iibbs" target="_blank" rel="noreferrer" className="hover:text-black transition-colors duration-200">
+            LinkedIn ↗
+          </a>
+        </div>
+      </div>
+    </>
+  );
+}
