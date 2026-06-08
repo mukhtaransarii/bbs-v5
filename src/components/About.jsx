@@ -24,15 +24,15 @@ export default function About() {
             something no one asked me to.
           </p>
 
-          <div className="flex gap-2 md:text-xl">
+          {/* <div className="flex gap-2 md:text-xl">
             <a href="mailto:mukhtaralam8055@gmail.com" className="text-blue-500 cursor-pointer">Mail</a>
             <a href="https://github.com/mukhtaransarii" target="_blank" rel="noreferrer" className="text-blue-500 cursor-pointer">GitHub</a>
             <a href="https://linkedin.com/in/iibbs" target="_blank" rel="noreferrer" className="text-blue-500 cursor-pointer">Linkedin</a>
-          </div>
+          </div> */}
 
-          <button className="flex gap-4 mt-8 md:text-xl">
+          {/* <button className="flex gap-4 mt-8 md:text-xl">
             <a href="#contact" className="px-5 py-2 rounded-2xl border border-black text-sm font-semibold hover:bg-white hover:text-black transition">🤝 Let's Connect</a>
-          </button>
+          </button> */}
         </div>
 
         <img src='/img/sections/MukhtarGoggles.webp' alt="Mukhtar Alam" className="max-w-full md:max-w-[30vw] object-contain" />

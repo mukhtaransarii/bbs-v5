@@ -50,8 +50,8 @@ export default function Navbar() {
 
         {/* Bottom links */}
         <div className="px-8 pb-8 flex flex-col  text-[10px] tracking-widest uppercase text-gray-400">
-          <a href="mailto:mukhtaralam8055@gmail.com" className="hover:text-black transition-colors duration-200">
-            mukhtaralam8055@gmail.com
+          <a href="mailto:mukhtaralam.dev@gmail.com" className="hover:text-black transition-colors duration-200">
+            mukhtaralam.dev@gmail.com
           </a>
           <a href="https://linkedin.com/in/iibbs" target="_blank" rel="noreferrer" className="hover:text-black transition-colors duration-200">
             LinkedIn ↗
