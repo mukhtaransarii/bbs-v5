@@ -21,7 +21,7 @@ const Hero = () => {
 
 
         <a
-          href="contact"
+          href="#contact"
           className="px-5 py-2 w-fit flex items-center gap-1 rounded-2xl bg-green-700 text-white text-sm font-semibold hover:bg-gray-800 transition"
         >
           Book your project
